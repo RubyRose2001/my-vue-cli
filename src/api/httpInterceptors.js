@@ -12,7 +12,7 @@ function interceptors() {
   axios.interceptors.response.use((res) => {
     // response container
     console.log(res);
-    if (res.response.status === 404) {
+    if (res.status === 404) {
       // 404
     }
     return res;

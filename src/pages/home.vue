@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-// import { baiduSeach } from '../api/index';
+import { home } from '../api/index';
 import { mapMutations, mapGetters } from 'vuex';
 import * as types from '@/store/types';
 
@@ -60,6 +60,9 @@ export default {
       this.setNumber(num);
     },
     add() {
+      home().then((res) => {
+        console.log(res);
+      });
       this.val += 1;
       this.setNumber(this.val);
     },

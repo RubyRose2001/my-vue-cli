@@ -5,6 +5,7 @@ import App from './App';
 import store from './store';
 import router from './router';
 import plugins from './plugins';
+import './mock';
 
 Vue.config.productionTip = false;
 Vue.use(plugins);
