@@ -13,9 +13,9 @@ module.exports = {
     'airbnb-base'
   ],
   // required to lint *.vue files
-  plugins: [
-    'vue'
-  ],
+  // plugins: [
+  //   'vue'
+  // ],
   globals: {
     'globalConfig': true,
   },

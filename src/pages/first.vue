@@ -1,26 +1,26 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <button @click="jian">按钮-</button>
+    <button @click="jian">按钮--</button>
     <input
       v-model="val"
       type="text"
     >
-    <button @click="add">按钮+</button>
-    <button @click="jump">跳</button>
+    <button @click="add">按钮++</button>
   </div>
 </template>
 <script>
 import { home } from '../api/index';
 import { mapMutations, mapGetters } from 'vuex';
 import * as types from '@/store/types';
+
 // console.log(globalConfig);
 
 export default {
   name: 'HelloWorld',
   data() {
     return {
-      msg: '我是首页',
+      msg: '另一页',
       val: '',
       opt: {
         json: 2,
@@ -38,36 +38,26 @@ export default {
       'number'
     ]),
   },
+  // watch: {
+  //   val(wd) {
+  //     // baiduSeach
+  //     const params = {
+  //       ...this.opt,
+  //       wd,
+  //     };
+  //     baiduSeach(params).then((res) => {
+  //       console.log(res);
+  //     });
+  //   },
+  // },
   created() {
     this.val = this.number;
-    console.log(navigator.browserLanguage, navigator.systemLanguage, navigator.userLanguage);
   },
   methods: {
     jian() {
       this.val -= 1;
       const num = this.val < 0 ? 0 : this.val;
       this.setNumber(num);
-    },
-    jump() {
-      const that = this;
-      console.log(this.$loadScript);
-      const a = [{
-        path: '/first',
-        name: 'first',
-        component: (resolve) => {
-          that.$loadScript('../../First-24378769.js').then(() => {
-            resolve(1);
-          });
-        },
-        // component: resolve => require(['./First-24378769.js'], resolve),
-        meta: {
-          title: '另一页',
-        },
-      }];
-      this.$router.addRoutes(a);
-      setTimeout(() => {
-        this.$router.push('/first');
-      }, 1000);
     },
     add() {
       home().then((res) => {

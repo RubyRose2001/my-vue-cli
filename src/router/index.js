@@ -1,7 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 // import HelloWorld from '@/components/HelloWorld'
-const Home = () => import('@/pages/home');
+const Home = r => require.ensure([], () => r(require('@/pages/home')), 'Home');
+// const First = r => require.ensure([], () => r(require('@/pages/first')), 'First');
+// const Home = () => import(/* webpackChunkName: "home" */ '@/pages/home');
+// const First = () => import(/* webpackChunkName: "first" */ '@/pages/first');
 
 Vue.use(Router);
 
@@ -15,6 +18,14 @@ const router = new Router({
         title: '首页',
       },
     },
+    // {
+    //   path: '/first',
+    //   name: 'first',
+    //   component: First,
+    //   meta: {
+    //     title: '另一页',
+    //   },
+    // },
   ],
 });
 

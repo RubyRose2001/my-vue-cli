@@ -1,4 +1,10 @@
+import loadScript from './loadScript';
+
 const arg = [
+  {
+    name: '$loadScript',
+    method: loadScript,
+  },
 ];
 const install = (Vue) => {
   arg.forEach((plugin) => {
