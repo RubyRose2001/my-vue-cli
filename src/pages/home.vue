@@ -49,25 +49,25 @@ export default {
       this.setNumber(num);
     },
     jump() {
-      const that = this;
-      console.log(this.$loadScript);
       const a = [{
         path: '/first',
         name: 'first',
-        component: (resolve) => {
-          that.$loadScript('../../First-24378769.js').then(() => {
-            resolve(1);
-          });
-        },
+        component: resolve => require(['./first.vue'], resolve),
         // component: resolve => require(['./First-24378769.js'], resolve),
         meta: {
           title: '另一页',
         },
       }];
       this.$router.addRoutes(a);
-      setTimeout(() => {
-        this.$router.push('/first');
-      }, 1000);
+      // setTimeout(() => {
+      //   this.$router.push('/first');
+      // }, 1000);
+      this.$router.push({
+        path: '/first',
+        params: {
+          name: 'first',
+        },
+      });
     },
     add() {
       home().then((res) => {

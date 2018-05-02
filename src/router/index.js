@@ -2,8 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 // import HelloWorld from '@/components/HelloWorld'
 const Home = r => require.ensure([], () => r(require('@/pages/home')), 'Home');
-// const First = r => require.ensure([], () => r(require('@/pages/first')), 'First');
-// const Home = () => import(/* webpackChunkName: "home" */ '@/pages/home');
+// const Dynamic = r => require.ensure([], () => r(require('@/pages/Dynamic')), 'Dynamic');
+// const Dynamic = () => import(/* webpackChunkName: "Dynamic" */ '@/pages/Dynamic');
 // const First = () => import(/* webpackChunkName: "first" */ '@/pages/first');
 
 Vue.use(Router);
@@ -23,7 +23,7 @@ const router = new Router({
     //   name: 'first',
     //   component: First,
     //   meta: {
-    //     title: '另一页',
+    //     title: '不知道那页',
     //   },
     // },
   ],

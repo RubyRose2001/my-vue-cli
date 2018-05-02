@@ -38,18 +38,6 @@ export default {
       'number'
     ]),
   },
-  // watch: {
-  //   val(wd) {
-  //     // baiduSeach
-  //     const params = {
-  //       ...this.opt,
-  //       wd,
-  //     };
-  //     baiduSeach(params).then((res) => {
-  //       console.log(res);
-  //     });
-  //   },
-  // },
   created() {
     this.val = this.number;
   },
